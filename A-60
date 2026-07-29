@@ -101,6 +101,40 @@ end)
 entity:SetCallback("OnDamagePlayer", function(newHealth: number)
 	if newHealth <= 0 then
 		print("Entity has killed the player")
+task.wait(0.954)
+ 
+        -- GUI cho jumpscare
+        local gui = Instance.new("ScreenGui", player.PlayerGui)
+        gui.IgnoreGuiInset = true
+        gui.ResetOnSpawn = false
+ 
+        local img = Instance.new("ImageLabel", gui)
+        img.Image = "rbxassetid://14865476959"
+        img.BackgroundTransparency = 1
+        img.Size = UDim2.fromScale(0.8, 0.8)          -- nhỏ lúc đầu
+        img.Position = UDim2.fromScale(0.1, 0.1)
+        img.Rotation = 0
+        img.ImageTransparency = 1                     -- bắt đầu ẩn
+ 
+        -- Tween hiển thị + xoay + phóng to
+        local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+        local tween = TweenService:Create(img, tweenInfo, {
+            ImageTransparency = 0,                    -- hiện lên
+            Rotation = 20,                             -- xoay nhẹ sang phải
+            Size = UDim2.new(0.95, 0.95)         -- phóng to chút
+        })
+ 
+        tween:Play()
+        tween.Completed:Wait()
+ 
+        -- Sau tween, bạn có thể thêm hiệu ứng khác nếu muốn
+        entityModel:Destroy()
+        game.Players.LocalPlayer.Character.Humanoid.Health -= 1000
+        game.ReplicatedStorage.GameStats["Player_".. game.Players.LocalPlayer.Name].Total.DeathCause.Value = "Multi Monster (DRINK 20 PRIME)"
+        wait(2)
+        gui:Destroy()
+    end)
+end)
 	else
 		print("Entity has damaged the player")
 	end

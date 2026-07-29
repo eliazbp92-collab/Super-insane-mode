@@ -1,5 +1,3 @@
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-
 function light(tim,color0,color1)
 	local tweenservice = game:GetService("TweenService")
 	local info = TweenInfo.new(tim,Enum.EasingStyle.Linear)
@@ -26,7 +24,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyou
 local entity = Spawner:Create({
 	Entity = {
 		Name = "RipperNotMoving",
-		Asset = "rbxassetid://80101485119287",
+		Asset = "rbxassetid://94938134267618",
 		HeightOffset = 4
 	},
 	Lights = {

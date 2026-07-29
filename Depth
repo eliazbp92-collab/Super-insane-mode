@@ -28,7 +28,7 @@ local entity = Spawner:Create({
 	},
 	Movement = {
 		Speed = 200,
-		Delay = 2,
+		Delay = 1,
 		Reversed = true
 	},
 	Rebounding = {
@@ -36,7 +36,7 @@ local entity = Spawner:Create({
 		Type = "Ambush", -- "Blitz"
 		Min = 3,
 		Max = 3,
-		Delay = 2
+		Delay = 0.5
 	},
 	Damage = {
 		Enabled = true,
@@ -51,7 +51,7 @@ local entity = Spawner:Create({
 	},
 	Death = {
 		Type = "Guiding", -- "Curious"
-		Hints = {"You died to A-60.", "He look like normal rooms", "Hide to the closet or a bed", "hope you surivie"},
+		Hints = {"You died to Depth.", "He rebound rooms", "Hide to the closet or a bed", "hope you surivie”,
 		Cause = ""
 	}
 })

@@ -24,7 +24,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyou
 local entity = Spawner:Create({
 	Entity = {
 		Name = "DepthNotMoving",
-		Asset = "rbxassetid://93356386746722",
+		Asset = "rbxassetid://11535810241",
 		HeightOffset = 4
 	},
 	Lights = {

@@ -15,7 +15,7 @@ local entity = Spawner:Create({
 			Enabled = true,
 			Duration = 1
 		},
-		Shatter = false,
+		Shatter = true,
 		Repair = false
 	},
 	Earthquake = {
@@ -27,9 +27,9 @@ local entity = Spawner:Create({
 		Values = {1.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 200,
-		Delay = 1,
-		Reversed = true
+		Speed = 120,
+		Delay = 0.5,
+		Reversed = false
 	},
 	Rebounding = {
 		Enabled = true,
